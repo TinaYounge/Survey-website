@@ -1,5 +1,6 @@
 import { Box, Container, Typography } from "@mui/material";
 import React from "react";
+import Pagenumber from "../Components/Pagenumber";
 import RolePosition from "../Components/RolePosition";
 
 function Page2() {
@@ -15,7 +16,6 @@ function Page2() {
       }}
     >
       <Container maxWidth="sm">
-        {" "}
         <Typography
           variant="h4"
           align="center"
