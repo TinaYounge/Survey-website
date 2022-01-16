@@ -11,6 +11,12 @@ function App() {
         main: green[500],
       },
     },
+    typography: {
+      button: {
+        textTransform: "none",
+        fontSize: 18,
+      },
+    },
   });
   return (
     <div>
