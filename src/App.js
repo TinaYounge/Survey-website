@@ -1,14 +1,15 @@
-import Page1 from "./Pages/Page1";
 import { ThemeProvider, createTheme } from "@mui/material/styles";
-import { green, purple } from "@mui/material/colors";
+import { Routes, Route } from "react-router-dom";
+import Nav from "./Components/Nav";
+import Bottom from "./Components/Bottom";
+import Page1 from "./Pages/Page1";
+import Page2 from "./Pages/Page2";
+
 function App() {
   const theme = createTheme({
     palette: {
       primary: {
         main: "#07264c",
-      },
-      secondary: {
-        main: green[500],
       },
     },
     typography: {
@@ -18,10 +19,16 @@ function App() {
       },
     },
   });
+
   return (
     <div>
       <ThemeProvider theme={theme}>
-        <Page1 />
+        <Nav />
+        <Routes>
+          <Route path="/" element={<Page1 />} />
+          <Route path="/page2" element={<Page2 />} />
+        </Routes>
+        <Bottom />
       </ThemeProvider>
     </div>
   );
