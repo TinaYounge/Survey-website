@@ -35,11 +35,12 @@ function ContactBox() {
 />
 <FormControlLabel
           value="end"
-sx={{color:"grey"}}          control={<Checkbox />}
+style={{color:"grey"}}          control={<Checkbox />}
           label="I agree to receive a summary of the survey findings"
           labelPlacement="end"
         />
         <FormControlLabel
+        style={{color:"grey"}}    
           value="end"
           control={<Checkbox />}
           label="I agree to be contacted by SOMEHOB in the future research"

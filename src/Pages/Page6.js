@@ -27,7 +27,7 @@ function Page6() {
             color="#07264c"
             style={{ fontWeight: "bold" }}
           >
-Thank you for tacking the time to complete our survey. Your help is very much appreciated. </Typography>
+Thank you for taking the time to complete our survey. Your help is very much appreciated. </Typography>
 <Typography             color="#07264c"
  variant ="inherit"  align="center"
 >If you have any questions or concern, please email lead to researcher" </Typography>        
@@ -55,12 +55,14 @@ Interested in summary survey of the survey?  </Typography>
  variant ="inherit"  align="center"
 >If you change your mind, you can always opt-out at later date. </Typography> 
 <ContactBox/>
+<Typography          my={2} style={{fontStyle:"italic"}}
+ variant ="inherit"  align="center"
+><span style={{fontWeight:"bold"}}>Please note:</span> your name and email address will note be linked with your survey answers</Typography> 
   <Stack direction="row" justifyContent="center" my={4}   >
-  <Button variant="contained" sx={{width:"300px"}}>
-I have changed my mind              </Button>          </Stack>
-          <Stack direction="row" justifyContent="center" >
-  <Button variant="outlined" color="inherit" sx={{width:"300px"}}>Back to survey</Button>
-          </Stack>
+  <Button variant="outlined" sx={{width:"200px"}}>
+ Back to the survey           </Button>       <Button variant="contained" color="inherit" sx={{width:"300px", marginLeft:"20px"}}>Submit </Button>
+   </Stack>
+          
         </Container>
       </Box>
     </div>
