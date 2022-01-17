@@ -1,9 +1,9 @@
 import * as React from "react";
 import Button from "@mui/material/Button";
 import { Box } from "@mui/system";
-// import Checkbox from "@material-ui/core/Checkbox";
-// import CircleCheckedFilled from "@material-ui/icons/CheckCircle";
-// import CircleUnchecked from "@material-ui/icons/RadioButtonUnchecked";
+import CheckCircleIcon from '@mui/icons-material/CheckCircle';
+import CheckCircleOutlineIcon from '@mui/icons-material/CheckCircleOutline';
+import Checkbox from '@mui/material/Checkbox';
 
 
 //test with macs
@@ -21,11 +21,12 @@ export default function RolePosition() {
           marginBottom: 10,
         }}
       >
-        {/* <Checkbox
+
+        <Checkbox
           color="primary"
-          icon={<CircleUnchecked />}
-          checkedIcon={<CircleCheckedFilled />}
-        /> */}
+          icon={<CheckCircleIcon />}
+          checkedIcon={<CheckCircleOutlineIcon />}
+        />
         Mother
       </Button>
       <Button
@@ -40,11 +41,11 @@ export default function RolePosition() {
         }}
       >
         {" "}
-        {/* <Checkbox
+        <Checkbox
           color="primary"
-          icon={<CircleUnchecked />}
-          checkedIcon={<CircleCheckedFilled />}
-        /> */}
+          icon={<CheckCircleIcon />}
+          checkedIcon={<CheckCircleOutlineIcon />}
+        />
         Father
       </Button>
       <Button
@@ -58,12 +59,11 @@ export default function RolePosition() {
           marginBottom: 10,
         }}
       >
-        {" "}
-        {/* <Checkbox
+        <Checkbox
           color="primary"
-          icon={<CircleUnchecked />}
-          checkedIcon={<CircleCheckedFilled />}
-        /> */}
+          icon={<CheckCircleIcon />}
+          checkedIcon={<CheckCircleOutlineIcon />}
+        />
         Prefer not to say
       </Button>
     </Box>
