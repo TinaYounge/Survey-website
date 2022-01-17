@@ -12,7 +12,7 @@ function Page4() {
           mx: 10,
           my: 5,
           borderRadius: "8px",
-          minHeight: "75vh",
+          minHeight: "85vh",
         }}
       >
         <Container maxWidth="sm">
@@ -34,11 +34,7 @@ function Page4() {
             often with your child and why{" "}
           </Typography>
           <TextFill />
-          <Stack direction="row" justifyContent="center">
-            <Button variant="contained" color="inherit">
-              Continue
-            </Button>
-          </Stack>
+        
         </Container>
       </Box>
     </div>

@@ -10,7 +10,7 @@ import CheckCircleIcon from "@mui/icons-material/CheckCircle";
 import CheckCircleOutlineIcon from "@mui/icons-material/CheckCircleOutline";
 import Checkbox from "@mui/material/Checkbox";
 import { makeStyles } from "@mui/styles";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { UserUpdate } from "../redux/UserInfo/UserAction";
 import { Link } from "react-router-dom";
 
@@ -56,20 +56,21 @@ const MenuProps = {
 const names = ["Select all", "Chinese", "English", "Vietnamese"];
 
 export default function LanguageBox() {
+  const userInfo = useSelector((state) => state.user);
   const classes = useStyles();
   const dispatch = useDispatch();
-  const [langInfo, setLangInfo] = useState({
-    language: [],
-  });
+  const [langInfo, setLangInfo] = useState(userInfo);
   const [personName, setPersonName] = React.useState([]);
   const handleChange = (event) => {
     const {
       target: { value },
     } = event;
     setPersonName(typeof value === "string" ? value.split(",") : value);
-    setLangInfo({ ...langInfo, language: event.target.value });
+    setLangInfo({ ...userInfo, language: event.target.value });
   };
-const PushInfo=()=>{dispatch(UserUpdate(langInfo))}
+  const PushInfo = () => {
+    dispatch(UserUpdate(langInfo));
+  };
   return (
     <div>
       <FormControl sx={{ width: "100%" }}>
@@ -105,7 +106,7 @@ const PushInfo=()=>{dispatch(UserUpdate(langInfo))}
         fullWidth={true}
         variant="outlined"
         className={classes.buttonPage2}
-        onClick={() => setLangInfo({ language: "not to say" })}
+        onClick={() => setLangInfo({ ...userInfo, language: "not to say" })}
       >
         <Checkbox
           className={classes.checkBox}
@@ -114,17 +115,19 @@ const PushInfo=()=>{dispatch(UserUpdate(langInfo))}
         />
         Prefer not to say
       </Button>
-      
+
       <Stack direction="row" justifyContent="center" my={5}>
-       <Link to="/page4"> <Button
-          variant="contained"
-          color="inherit"
-          sx={{ width: "300px" }}
-          onClick={PushInfo}
-        >
-          Continue{" "}
-        </Button>{" "}</Link>
-        
+        <Link to="/page4">
+          {" "}
+          <Button
+            variant="contained"
+            color="inherit"
+            sx={{ width: "300px" }}
+            onClick={PushInfo}
+          >
+            Continue{" "}
+          </Button>{" "}
+        </Link>
       </Stack>
     </div>
   );

@@ -1,11 +1,15 @@
-import * as React from 'react';
-import Box from '@mui/material/Box';
+import React, {  useState } from "react";
+import { Box, Container, Typography, Stack, Button } from "@mui/material";
 import TextField from '@mui/material/TextField';
-
+import { useDispatch, useSelector } from "react-redux";
+import { UserUpdate } from "../redux/UserInfo/UserAction";
+import { Link } from "react-router-dom";
 export default function TextFill() {
+    const userInfo = useSelector((state) => state.user);
+  const dispatch = useDispatch();
+  const [textFill, setTextFill] = useState(userInfo);
   return (
     <Box
-     
     >
       <TextField
        sx={{
@@ -18,8 +22,15 @@ export default function TextFill() {
       rows={10}
       color="warning"
       defaultValue="nnnnnnnnnnnn"
+      onChange={(e)=>setTextFill({...textFill,note: e.target.value })}
         />
-        
+          <Stack direction="row" justifyContent="center">
+          <Link to="/page5"> 
+            <Button variant="contained" color="inherit" onClick={()=>dispatch(UserUpdate(textFill))}>
+              Continue
+            </Button>
+            </Link>
+          </Stack>
     </Box>
   );
 }

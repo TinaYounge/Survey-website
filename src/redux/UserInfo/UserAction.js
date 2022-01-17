@@ -1,6 +1,5 @@
 import { GET_USER_FAIL, GET_USER_REQUEST, GET_USER_SUCCESS } from "./UserType";
 
-
 export const UserRequest = () => {
   return {
     type: GET_USER_REQUEST,
@@ -14,6 +13,8 @@ export const UserSuccess = (state) => {
   };
 };
 
+
+
 export const UserFail = () => {
   return {
     type: GET_USER_FAIL,
@@ -22,11 +23,7 @@ export const UserFail = () => {
 };
 
 export const UserUpdate = (roleUpdate) => {
-    return (dispatch) => {
-        dispatch(UserSuccess(roleUpdate));
-        console.log("Tinaaaa",roleUpdate)
-       
-      };
-  
+  return (dispatch) => {
+    dispatch(UserSuccess(roleUpdate));
+  };
 };
-
