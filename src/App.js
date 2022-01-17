@@ -21,7 +21,6 @@ function App() {
       button: {
         textTransform: "none",
         fontSize: 18,
-        textDecoration: "none",
       },
     },
   });
