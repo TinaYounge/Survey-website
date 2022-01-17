@@ -6,6 +6,8 @@ import CheckCircleOutlineIcon from '@mui/icons-material/CheckCircleOutline';
 import Checkbox from '@mui/material/Checkbox';
 import { makeStyles } from '@mui/styles';
 import { useDispatch } from "react-redux";
+import {UserUpdate} from "../redux/UserInfo/UserAction"
+
 
 const useStyles = makeStyles({
   buttonPage2: {
@@ -41,12 +43,12 @@ const useStyles = makeStyles({
 export default function RolePosition({role}) {
   const [userInfo, setUserInfo] = useState(role);
   const classes = useStyles();
-  const MotherHandler = ()=> {
-    console.log("hgahah",role);
-    setUserInfo({...userInfo,role:"mother"})
+    const dispatch = useDispatch();
 
-     ;
-  }
+ 
+  dispatch(UserUpdate(userInfo))
+
+  console.log("hgahah",userInfo);
 
   
   return (
@@ -55,7 +57,7 @@ export default function RolePosition({role}) {
       className={classes.buttonPage2}
         fullWidth={true}
         variant="outlined"
-     onClick={MotherHandler}
+     onClick={()=>{  setUserInfo({...userInfo,role:"mother"})}}
       >
 
         <Checkbox
@@ -69,6 +71,7 @@ export default function RolePosition({role}) {
         fullWidth={true}
         variant="outlined"
         className={classes.buttonPage2}
+        onClick={()=>{  setUserInfo({...userInfo,role:"father"})}}
 
       >
         {" "}
@@ -80,9 +83,12 @@ export default function RolePosition({role}) {
         Father
       </Button>
       <Button
+      
         fullWidth={true}
         variant="outlined"
         className={classes.buttonPage2}
+        onClick={()=>{  setUserInfo({...userInfo,role:"not to say"})}}
+
 
       >
         <Checkbox

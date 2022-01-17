@@ -21,37 +21,12 @@ export const UserFail = () => {
   };
 };
 
-export const UserUpdate = () => {
-  return (dispatch) => {
-    dispatch(UserRequest);
-    // const UserResponse = async () => {
-    //   try {
-    //     const res = await api.put(`api/UserOfStudent/updateUser`);
-    //     const data = await res.data;
-    //     dispatch(UserSuccess(data));
-    //     notifyFollowing();
-    //   } catch (error) {
-    //     const errorMge = Error.message;
-    //     dispatch(UserFail(errorMge));
-    //   }
-    // };
-    UserResponse();
-  };
+export const UserUpdate = (roleUpdate) => {
+    return (dispatch) => {
+        dispatch(UserSuccess(roleUpdate));
+        console.log("Tinaaaa",roleUpdate)
+       
+      };
+  
 };
 
-export const GetUser = () => {
-  return (dispatch) => {
-    dispatch(UserRequest);
-    // const UserResponse = async () => {
-    //   try {
-    //     const res = await api.get(`api/UserOfStudent/getAllUsersPaidOfStudent`);
-    //     const data = await res.data;
-    //     dispatch(UserSuccess(data));
-    //   } catch (error) {
-    //     const errorMge = Error.message;
-    //     dispatch(UserFail(errorMge));
-    //   }
-    // };
-    UserResponse();
-  };
-};
