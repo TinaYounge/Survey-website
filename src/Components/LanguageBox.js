@@ -5,10 +5,44 @@ import MenuItem from "@mui/material/MenuItem";
 import FormControl from "@mui/material/FormControl";
 import ListItemText from "@mui/material/ListItemText";
 import Select from "@mui/material/Select";
-import Checkbox from "@mui/material/Checkbox";
 import { Button, TextField } from "@mui/material";
-import CircleCheckedFilled from "@material-ui/icons/CheckCircle";
-import CircleUnchecked from "@material-ui/icons/RadioButtonUnchecked";
+import CheckCircleIcon from '@mui/icons-material/CheckCircle';
+import CheckCircleOutlineIcon from '@mui/icons-material/CheckCircleOutline';
+import Checkbox from '@mui/material/Checkbox';
+import { makeStyles } from '@mui/styles';
+
+const useStyles = makeStyles({
+  buttonPage2: {
+    justifyContent: "flex-start",
+    border: "2px solid #e0e3e5",
+    borderRadius: "5px",
+    color: "#e0e3e5",
+    marginTop:20
+,
+    marginBottom: 10,
+    '&:hover': {
+      color: '#04244c',
+      border: "2px solid #04244c",
+
+  },
+  '&:active': {
+    color: '#04244c',
+    border: "2px solid #04244c",
+
+},
+  },
+  checkBox:{
+    color:"#e0e3e5", '&:hover': {
+      color: '#04244c',
+
+  },
+  '&:active': {
+    color: '#04244c',
+
+},
+  }
+});
+
 
 const ITEM_HEIGHT = 48;
 const ITEM_PADDING_TOP = 8;
@@ -24,6 +58,8 @@ const MenuProps = {
 const names = ["Select all", "Chinese", "English", "Vietnamese"];
 
 export default function LanguageBox() {
+  const classes = useStyles();
+
   const [personName, setPersonName] = React.useState([]);
 
   const handleChange = (event) => {
@@ -31,7 +67,6 @@ export default function LanguageBox() {
       target: { value },
     } = event;
     setPersonName(
-      // On autofill we get a stringified value.
       typeof value === "string" ? value.split(",") : value
     );
   };
@@ -56,34 +91,26 @@ export default function LanguageBox() {
             size="small"
             sx={{
               width: "100%",
-              color: "red",
               my: 2,
             }}
           />
           {names.map((name) => (
             <MenuItem key={name} value={name}>
               <Checkbox checked={personName.indexOf(name) > -1} />
-              <ListItemText primary={name} />
+              <ListItemText primary={name}  />
             </MenuItem>
           ))}
         </Select>
       </FormControl>
-      <Button
-        fullWidth={true}
+      <Button        fullWidth={true}
         variant="outlined"
-        style={{
-          justifyContent: "flex-start",
-          border: "2px solid #112f53",
-          borderRadius: "5px",
-          color: "#112f53",
-          marginBottom: 10,
-          marginTop: 20,
-        }}
+        className={classes.buttonPage2}
+
       >
         <Checkbox
-          color="primary"
-          icon={<CircleUnchecked />}
-          checkedIcon={<CircleCheckedFilled />}
+              className={classes.checkBox}
+              icon={<CheckCircleIcon />}
+          checkedIcon={<CheckCircleOutlineIcon />}
         />
         Prefer not to say
       </Button>
