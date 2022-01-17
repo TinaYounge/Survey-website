@@ -8,6 +8,7 @@ import Page3 from "./Pages/Page3";
 import Page4 from "./Pages/Page4";
 import Page5 from "./Pages/Page5";
 import Page6 from "./Pages/Page6";
+import Page7 from "./Pages/Page7";
 
 function App() {
   const theme = createTheme({
@@ -36,6 +37,7 @@ function App() {
           <Route path="/page4" element={<Page4 />} />
           <Route path="/page5" element={<Page5 />} />
           <Route path="/page6" element={<Page6 />} />
+          <Route path="/page7" element={<Page7 />} />
 
         </Routes>
         <Bottom />
