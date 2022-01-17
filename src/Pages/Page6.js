@@ -1,16 +1,24 @@
-import React, {useState}from "react";
-import { Box, Container, Typography, Stack, Button,TextField,Checkbox ,FormControlLabel} from "@mui/material";
+import React, { useState } from "react";
+import {
+  Box,
+  Container,
+  Typography,
+  Stack,
+  Button,
+  TextField,
+  Checkbox,
+  FormControlLabel,
+} from "@mui/material";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 import EmailIcon from "@mui/icons-material/Email";
-import { useSelector,useDispatch } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import { UserUpdate } from "../redux/UserInfo/UserAction";
+import { Link } from "react-router-dom";
 
 function Page6() {
+  const dispatch = useDispatch();
   const userInfo = useSelector((state) => state.user);
   const [contact, setContact] = useState(userInfo);
-  const dispatch = useDispatch();
-
-console.log("contatc",contact)
   return (
     <div>
       <Box
@@ -79,7 +87,9 @@ console.log("contatc",contact)
             sx={{ width: "100%", border: "1px solid #e0e3e5", marginBottom: 5 }}
             id="outlined"
             defaultValue="Jenifer LoveWood"
-            onChange={(e)=>setContact({...contact,name:e.target.value})}
+            onChange={(e) =>
+              setContact({ ...contact, name: e.target.value, page: "/page6" })
+            }
           />
           <Typography mb={1} style={{ fontWeight: "bold", color: "#00224b" }}>
             <EmailIcon />{" "}
@@ -92,7 +102,9 @@ console.log("contatc",contact)
             sx={{ width: "100%", border: "1px solid #e0e3e5", marginBottom: 5 }}
             id="outlined"
             defaultValue="JeniferLoveWood@mail.com"
-            onChange={(e)=>setContact({...contact,email:e.target.value})}
+            onChange={(e) =>
+              setContact({ ...contact, email: e.target.value, page: "/page6" })
+            }
           />
           <FormControlLabel
             value="yes"
@@ -100,7 +112,13 @@ console.log("contatc",contact)
             control={<Checkbox />}
             label="I agree to receive a summary of the survey findings"
             labelPlacement="end"
-            onChange={(e)=>setContact({...contact,wantResult:e.target.value})}
+            onChange={(e) =>
+              setContact({
+                ...contact,
+                wantResult: e.target.value,
+                page: "/page6",
+              })
+            }
           />
           <FormControlLabel
             style={{ color: "grey" }}
@@ -108,7 +126,13 @@ console.log("contatc",contact)
             control={<Checkbox />}
             label="I agree to be contacted by SOMEHOB in the future research"
             labelPlacement="end"
-            onChange={(e)=>setContact({...contact,allowedContact:e.target.value})}
+            onChange={(e) =>
+              setContact({
+                ...contact,
+                allowedContact: e.target.value,
+                page: "/page6",
+              })
+            }
           />{" "}
           <Typography
             my={2}
@@ -120,17 +144,22 @@ console.log("contatc",contact)
             and email address will note be linked with your survey answers
           </Typography>
           <Stack direction="row" justifyContent="center" my={4}>
-            <Button variant="outlined" sx={{ width: "200px" }}>
-              Back to the survey{" "}
-            </Button>{" "}
-            <Button
-              variant="contained"
-              color="inherit"
-              sx={{ width: "300px", marginLeft: "20px" }}
-              onClick={dispatch(UserUpdate(contact))}
-            >
-              Submit
-            </Button>
+            <Link to="/" style={{ textDecoration: "none" }}>
+              {" "}
+              <Button variant="outlined" sx={{ width: "200px" }}>
+                Back to the survey{" "}
+              </Button>{" "}
+            </Link>
+            <Link to="/page7" style={{ textDecoration: "none" }}>
+              <Button
+                variant="contained"
+                color="inherit"
+                sx={{ width: "300px", marginLeft: "20px" }}
+                onClick={dispatch(UserUpdate(contact))}
+              >
+                Submit
+              </Button>
+            </Link>
           </Stack>
         </Container>
       </Box>

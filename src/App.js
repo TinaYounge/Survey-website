@@ -1,6 +1,5 @@
 import { ThemeProvider, createTheme } from "@mui/material/styles";
-import React, { useState } from "react";
-import { useDispatch } from "react-redux";
+import React from "react";
 import { Routes, Route } from "react-router-dom";
 import Nav from "./Components/Nav";
 import Bottom from "./Components/Bottom";
@@ -20,6 +19,9 @@ function App() {
       primary: {
         main: "#07264c",
       },
+      secondary:{
+        main:"#fffff"
+      }
     },
     typography: {
       button: {

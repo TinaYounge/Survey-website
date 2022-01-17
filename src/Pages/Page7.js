@@ -1,7 +1,6 @@
 import { Box, Container, Typography, Stack, Button } from "@mui/material";
 import React from "react";
-import TextFill from "../Components/TextFill";
-import ContactBox from "../Components/ContactBox";
+import { Link } from "react-router-dom";
 
 function Page7() {
   return (
@@ -27,9 +26,15 @@ function Page7() {
           </Typography>
 
           <Stack direction="row" justifyContent="center" my={4}>
-            <Button variant="contained" color="primary" sx={{ width: "300px" }}>
-              Back to SOMEHOB{" "}
-            </Button>
+            <Link to="/exit" style={{ textDecoration: "none" }}>
+              <Button
+                variant="contained"
+                color="primary"
+                sx={{ width: "300px" }}
+              >
+                Back to SOMEHOB{" "}
+              </Button>
+            </Link>
           </Stack>
         </Container>
       </Box>

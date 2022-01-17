@@ -29,6 +29,16 @@ const useStyles = makeStyles({
       color: "#04244c",
       border: "2px solid #04244c",
     },
+    
+    "&:visited": {
+      color: "#04244c",
+      border: "2px solid #04244c",
+    },
+    
+    "&:focus": {
+      color: "#04244c",
+      border: "2px solid #04244c",
+    },
   },
   checkBox: {
     color: "#e0e3e5",
@@ -117,7 +127,7 @@ export default function LanguageBox() {
       </Button>
 
       <Stack direction="row" justifyContent="center" my={5}>
-        <Link to="/page6" style={{textDecoration:"none"}}>
+        <Link to="/page4" style={{textDecoration:"none", color:"grey"}}>
           <Button
             variant="contained"
             color="inherit"

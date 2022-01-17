@@ -1,6 +1,7 @@
 import { Box, Container, Typography, Stack, Button } from "@mui/material";
 import React from "react";
 import TextFill from "../Components/TextFill";
+import { Link } from "react-router-dom";
 
 function Page4() {
   return (
@@ -12,12 +13,15 @@ function Page4() {
           mx: 10,
           my: 5,
           borderRadius: "8px",
-          minHeight: "85vh",
+          minHeight: "95vh",
         }}
       >
         <Container maxWidth="sm">
           <Stack direction="row" justifyContent="space-between" mt={10}>
-            <Button style={{ alignContent: "flex-end" }}> Back</Button>
+            <Link to="/page3" style={{ textDecoration: "none" }}>
+              {" "}
+              <Button style={{ alignContent: "flex-end" }}> Back</Button>
+            </Link>
             <Button variant="outlined" style={{ alignContent: "flex-end" }}>
               {" "}
               <span style={{ fontWeight: "bold" }}>[Part 1] 1/</span>20
@@ -34,7 +38,6 @@ function Page4() {
             often with your child and why{" "}
           </Typography>
           <TextFill />
-        
         </Container>
       </Box>
     </div>

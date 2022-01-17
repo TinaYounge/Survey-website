@@ -1,10 +1,9 @@
 import { Box, Container, Typography, Stack, Button } from "@mui/material";
-import React, { useState } from "react";
+import React from "react";
 import LanguageBox from "../Components/LanguageBox";
+import { Link } from "react-router-dom";
 
 function Page3() {
-
-
   return (
     <div>
       <Box
@@ -19,7 +18,11 @@ function Page3() {
       >
         <Container maxWidth="sm">
           <Stack direction="row" justifyContent="space-between" mt={10}>
-            <Button style={{ alignContent: "flex-end" }}> Back</Button>
+            <Link to="/page2" style={{ textDecoration: "none" }}>
+              {" "}
+              <Button style={{ alignContent: "flex-end" }}> Back</Button>
+            </Link>
+
             <Button variant="outlined" style={{ alignContent: "flex-end" }}>
               {" "}
               <span style={{ fontWeight: "bold" }}>[Part 1] 1/</span>20

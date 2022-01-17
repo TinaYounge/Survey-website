@@ -21,10 +21,10 @@ export default function TextFill() {
         rows={10}
         color="warning"
         defaultValue="nnnnnnnnnnnn"
-        onChange={(e) => setTextFill({ ...textFill, note: e.target.value })}
+        onChange={(e) => setTextFill({ ...textFill, note: e.target.value,page: "/page4" })}
       />
       <Stack direction="row" justifyContent="center">
-        <Link to="/page5">
+        <Link to="/page6" style={{textDecoration:"none", color:"grey"}}>
           <Button
             variant="contained"
             color="inherit"
