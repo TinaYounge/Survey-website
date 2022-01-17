@@ -21,7 +21,7 @@ export default function Page1() {
         <Box sx={{ mx: "auto", width: 350, my: 4 }}>
           <ReCaptchaGoogle />
         </Box>
-        <Box sx={{ px: 4, width: 600, my: 4 }}>
+        <Box sx={{  width: "100%", my: 4 }}>
           <Stack spacing={2} direction="row">
             <Button variant="outlined">Cancel</Button>
             <Link to="/page2" style={{  textDecoration: "none"}}>

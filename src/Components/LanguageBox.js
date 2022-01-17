@@ -1,15 +1,18 @@
-import * as React from "react";
+import React, { useReducer, useState } from "react";
 import OutlinedInput from "@mui/material/OutlinedInput";
 import InputLabel from "@mui/material/InputLabel";
 import MenuItem from "@mui/material/MenuItem";
 import FormControl from "@mui/material/FormControl";
 import ListItemText from "@mui/material/ListItemText";
 import Select from "@mui/material/Select";
-import { Button, TextField } from "@mui/material";
+import { Button, TextField, Stack } from "@mui/material";
 import CheckCircleIcon from "@mui/icons-material/CheckCircle";
 import CheckCircleOutlineIcon from "@mui/icons-material/CheckCircleOutline";
 import Checkbox from "@mui/material/Checkbox";
 import { makeStyles } from "@mui/styles";
+import { useDispatch } from "react-redux";
+import { UserUpdate } from "../redux/UserInfo/UserAction";
+import { Link } from "react-router-dom";
 
 const useStyles = makeStyles({
   buttonPage2: {
@@ -54,19 +57,22 @@ const names = ["Select all", "Chinese", "English", "Vietnamese"];
 
 export default function LanguageBox() {
   const classes = useStyles();
-
+  const dispatch = useDispatch();
+  const [langInfo, setLangInfo] = useState({
+    language: [],
+  });
   const [personName, setPersonName] = React.useState([]);
-
   const handleChange = (event) => {
     const {
       target: { value },
     } = event;
     setPersonName(typeof value === "string" ? value.split(",") : value);
+    setLangInfo({ ...langInfo, language: event.target.value });
   };
-
+const PushInfo=()=>{dispatch(UserUpdate(langInfo))}
   return (
     <div>
-      <FormControl sx={{ width: 550 }}>
+      <FormControl sx={{ width: "100%" }}>
         <Select
           id="demo-multiple-checkbox"
           multiple
@@ -99,6 +105,7 @@ export default function LanguageBox() {
         fullWidth={true}
         variant="outlined"
         className={classes.buttonPage2}
+        onClick={() => setLangInfo({ language: "not to say" })}
       >
         <Checkbox
           className={classes.checkBox}
@@ -107,6 +114,18 @@ export default function LanguageBox() {
         />
         Prefer not to say
       </Button>
+      
+      <Stack direction="row" justifyContent="center" my={5}>
+       <Link to="/page4"> <Button
+          variant="contained"
+          color="inherit"
+          sx={{ width: "300px" }}
+          onClick={PushInfo}
+        >
+          Continue{" "}
+        </Button>{" "}</Link>
+        
+      </Stack>
     </div>
   );
 }
