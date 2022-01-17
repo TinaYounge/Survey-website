@@ -1,10 +1,12 @@
 import * as React from "react";
 import Button from "@mui/material/Button";
 import { Box } from "@mui/system";
-import Checkbox from "@material-ui/core/Checkbox";
-import CircleCheckedFilled from "@material-ui/icons/CheckCircle";
-import CircleUnchecked from "@material-ui/icons/RadioButtonUnchecked";
+// import Checkbox from "@material-ui/core/Checkbox";
+// import CircleCheckedFilled from "@material-ui/icons/CheckCircle";
+// import CircleUnchecked from "@material-ui/icons/RadioButtonUnchecked";
 
+
+//test with macs
 export default function RolePosition() {
   return (
     <Box>
@@ -19,11 +21,11 @@ export default function RolePosition() {
           marginBottom: 10,
         }}
       >
-        <Checkbox
+        {/* <Checkbox
           color="primary"
           icon={<CircleUnchecked />}
           checkedIcon={<CircleCheckedFilled />}
-        />
+        /> */}
         Mother
       </Button>
       <Button
@@ -38,11 +40,11 @@ export default function RolePosition() {
         }}
       >
         {" "}
-        <Checkbox
+        {/* <Checkbox
           color="primary"
           icon={<CircleUnchecked />}
           checkedIcon={<CircleCheckedFilled />}
-        />
+        /> */}
         Father
       </Button>
       <Button
@@ -57,11 +59,11 @@ export default function RolePosition() {
         }}
       >
         {" "}
-        <Checkbox
+        {/* <Checkbox
           color="primary"
           icon={<CircleUnchecked />}
           checkedIcon={<CircleCheckedFilled />}
-        />
+        /> */}
         Prefer not to say
       </Button>
     </Box>
