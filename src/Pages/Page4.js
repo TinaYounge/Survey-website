@@ -31,6 +31,9 @@ function Page4() {
           >
 Please tell us what touchscreen game, app or story you use the most often with your child and why  </Typography>
           <TextFill />
+          <Stack direction="row" justifyContent="center" >
+          <Button variant="contained" color="inherit">Continue</Button>
+          </Stack>
         </Container>
       </Box>
     </div>
