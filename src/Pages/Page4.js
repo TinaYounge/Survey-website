@@ -16,12 +16,13 @@ function Page4() {
         }}
       >
         <Container maxWidth="sm">
-        <Stack direction="row" justifyContent="space-between" mt ={10} >
-        <Button style=
-{{ alignContent:"flex-end"}}> Back</Button>
-<Button  variant="outlined"   style=
-{{ alignContent:"flex-end"}}> <span style={{fontWeight:"bold"}}>[Part 1] 1/</span>20</Button>
-</Stack> 
+          <Stack direction="row" justifyContent="space-between" mt={10}>
+            <Button style={{ alignContent: "flex-end" }}> Back</Button>
+            <Button variant="outlined" style={{ alignContent: "flex-end" }}>
+              {" "}
+              <span style={{ fontWeight: "bold" }}>[Part 1] 1/</span>20
+            </Button>
+          </Stack>
           <Typography
             variant="h4"
             align="center"
@@ -29,10 +30,14 @@ function Page4() {
             mb={4}
             style={{ fontWeight: "bold" }}
           >
-Please tell us what touchscreen game, app or story you use the most often with your child and why  </Typography>
+            Please tell us what touchscreen game, app or story you use the most
+            often with your child and why{" "}
+          </Typography>
           <TextFill />
-          <Stack direction="row" justifyContent="center" >
-          <Button variant="contained" color="inherit">Continue</Button>
+          <Stack direction="row" justifyContent="center">
+            <Button variant="contained" color="inherit">
+              Continue
+            </Button>
           </Stack>
         </Container>
       </Box>

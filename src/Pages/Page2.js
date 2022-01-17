@@ -1,9 +1,18 @@
-import { Box, Container, Typography, Button,Stack } from "@mui/material";
-import React from "react";
-import Pagenumber from "../Components/Pagenumber";
+import { Box, Container, Typography, Button, Stack } from "@mui/material";
+import React, { useState } from "react";
+import { useDispatch } from "react-redux";
 import RolePosition from "../Components/RolePosition";
 
 function Page2() {
+  const [userInfo, setUserInfo] = useState({
+    role:"",
+    language:"",
+    note:"",
+    name: "",
+    email: "",
+    wantResult:"",
+allowedContact:""  });
+
   return (
     <Box
       sx={{
@@ -15,13 +24,13 @@ function Page2() {
         minHeight: "75vh",
       }}
     >
-      
       <Container maxWidth="sm">
-      <Stack direction="row" justifyContent="end" mt ={10} >
-
-<Button  variant="outlined"   style=
-{{ alignContent:"flex-end"}}> <span style={{fontWeight:"bold"}}>[Part 1] 1/</span>20</Button>
-</Stack>
+        <Stack direction="row" justifyContent="end" mt={10}>
+          <Button variant="outlined" style={{ alignContent: "flex-end" }}>
+            {" "}
+            <span style={{ fontWeight: "bold" }}>[Part 1] 1/</span>20
+          </Button>
+        </Stack>
         <Typography
           variant="h4"
           align="center"
@@ -31,7 +40,7 @@ function Page2() {
         >
           What is your role within the family?{" "}
         </Typography>
-        <RolePosition />
+        <RolePosition role={userInfo} />
       </Container>
     </Box>
   );

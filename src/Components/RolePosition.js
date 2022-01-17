@@ -1,10 +1,11 @@
-import * as React from "react";
+import React, { useState } from "react";
 import Button from "@mui/material/Button";
 import { Box } from "@mui/system";
 import CheckCircleIcon from '@mui/icons-material/CheckCircle';
 import CheckCircleOutlineIcon from '@mui/icons-material/CheckCircleOutline';
 import Checkbox from '@mui/material/Checkbox';
 import { makeStyles } from '@mui/styles';
+import { useDispatch } from "react-redux";
 
 const useStyles = makeStyles({
   buttonPage2: {
@@ -37,22 +38,30 @@ const useStyles = makeStyles({
 });
 
 //test with macs
-export default function RolePosition() {
+export default function RolePosition({role}) {
+  const [userInfo, setUserInfo] = useState(role);
   const classes = useStyles();
+  const MotherHandler = ()=> {
+    console.log("hgahah",role);
+    setUserInfo({...userInfo,role:"mother"})
 
+     ;
+  }
+
+  
   return (
     <Box>
       <Button 
       className={classes.buttonPage2}
         fullWidth={true}
         variant="outlined"
-     
+     onClick={MotherHandler}
       >
 
         <Checkbox
               className={classes.checkBox}
           icon={<CheckCircleIcon />}
-          checkedIcon={<CheckCircleOutlineIcon />}
+          checkedIcon={<CheckCircleOutlineIcon /> }
         />
         Mother
       </Button>

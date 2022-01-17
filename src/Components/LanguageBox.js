@@ -6,10 +6,10 @@ import FormControl from "@mui/material/FormControl";
 import ListItemText from "@mui/material/ListItemText";
 import Select from "@mui/material/Select";
 import { Button, TextField } from "@mui/material";
-import CheckCircleIcon from '@mui/icons-material/CheckCircle';
-import CheckCircleOutlineIcon from '@mui/icons-material/CheckCircleOutline';
-import Checkbox from '@mui/material/Checkbox';
-import { makeStyles } from '@mui/styles';
+import CheckCircleIcon from "@mui/icons-material/CheckCircle";
+import CheckCircleOutlineIcon from "@mui/icons-material/CheckCircleOutline";
+import Checkbox from "@mui/material/Checkbox";
+import { makeStyles } from "@mui/styles";
 
 const useStyles = makeStyles({
   buttonPage2: {
@@ -17,32 +17,27 @@ const useStyles = makeStyles({
     border: "2px solid #e0e3e5",
     borderRadius: "5px",
     color: "#e0e3e5",
-    marginTop:20
-,
+    marginTop: 20,
     marginBottom: 10,
-    '&:hover': {
-      color: '#04244c',
+    "&:hover": {
+      color: "#04244c",
       border: "2px solid #04244c",
-
+    },
+    "&:active": {
+      color: "#04244c",
+      border: "2px solid #04244c",
+    },
   },
-  '&:active': {
-    color: '#04244c',
-    border: "2px solid #04244c",
-
-},
+  checkBox: {
+    color: "#e0e3e5",
+    "&:hover": {
+      color: "#04244c",
+    },
+    "&:active": {
+      color: "#04244c",
+    },
   },
-  checkBox:{
-    color:"#e0e3e5", '&:hover': {
-      color: '#04244c',
-
-  },
-  '&:active': {
-    color: '#04244c',
-
-},
-  }
 });
-
 
 const ITEM_HEIGHT = 48;
 const ITEM_PADDING_TOP = 8;
@@ -66,9 +61,7 @@ export default function LanguageBox() {
     const {
       target: { value },
     } = event;
-    setPersonName(
-      typeof value === "string" ? value.split(",") : value
-    );
+    setPersonName(typeof value === "string" ? value.split(",") : value);
   };
 
   return (
@@ -97,19 +90,19 @@ export default function LanguageBox() {
           {names.map((name) => (
             <MenuItem key={name} value={name}>
               <Checkbox checked={personName.indexOf(name) > -1} />
-              <ListItemText primary={name}  />
+              <ListItemText primary={name} />
             </MenuItem>
           ))}
         </Select>
       </FormControl>
-      <Button        fullWidth={true}
+      <Button
+        fullWidth={true}
         variant="outlined"
         className={classes.buttonPage2}
-
       >
         <Checkbox
-              className={classes.checkBox}
-              icon={<CheckCircleIcon />}
+          className={classes.checkBox}
+          icon={<CheckCircleIcon />}
           checkedIcon={<CheckCircleOutlineIcon />}
         />
         Prefer not to say

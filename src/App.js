@@ -1,4 +1,6 @@
 import { ThemeProvider, createTheme } from "@mui/material/styles";
+import React, { useState } from "react";
+import { useDispatch } from "react-redux";
 import { Routes, Route } from "react-router-dom";
 import Nav from "./Components/Nav";
 import Bottom from "./Components/Bottom";
@@ -11,6 +13,15 @@ import Page6 from "./Pages/Page6";
 import Page7 from "./Pages/Page7";
 
 function App() {
+  const [userInfo, setUserInfo] = useState({
+    role:"",
+    language:"",
+    note:"",
+    name: "",
+    email: "",
+    wantResult:"",
+allowedContact:""  });
+  const dispatch = useDispatch();
   const theme = createTheme({
     palette: {
       primary: {
@@ -31,7 +42,7 @@ function App() {
         <Nav />
         <Routes>
           <Route path="/" element={<Page1 />} />
-          <Route path="/page2" element={<Page2 />} />
+          <Route path="/page2" element={<Page2 userInfo={userInfo}/>} />
           <Route path="/page3" element={<Page3 />} />
           <Route path="/page4" element={<Page4 />} />
           <Route path="/page5" element={<Page5 />} />

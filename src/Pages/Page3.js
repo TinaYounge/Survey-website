@@ -16,12 +16,13 @@ function Page3() {
         }}
       >
         <Container maxWidth="sm">
-        <Stack direction="row" justifyContent="space-between" mt ={10} >
-        <Button style=
-{{ alignContent:"flex-end"}}> Back</Button>
-<Button  variant="outlined"   style=
-{{ alignContent:"flex-end"}}> <span style={{fontWeight:"bold"}}>[Part 1] 1/</span>20</Button>
-</Stack> 
+          <Stack direction="row" justifyContent="space-between" mt={10}>
+            <Button style={{ alignContent: "flex-end" }}> Back</Button>
+            <Button variant="outlined" style={{ alignContent: "flex-end" }}>
+              {" "}
+              <span style={{ fontWeight: "bold" }}>[Part 1] 1/</span>20
+            </Button>
+          </Stack>
           <Typography
             variant="h4"
             align="center"
