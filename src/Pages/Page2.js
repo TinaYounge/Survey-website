@@ -1,4 +1,4 @@
-import { Box, Container, Typography } from "@mui/material";
+import { Box, Container, Typography, Button,Stack } from "@mui/material";
 import React from "react";
 import Pagenumber from "../Components/Pagenumber";
 import RolePosition from "../Components/RolePosition";
@@ -15,7 +15,13 @@ function Page2() {
         minHeight: "75vh",
       }}
     >
+      
       <Container maxWidth="sm">
+      <Stack direction="row" justifyContent="end" mt ={10} >
+
+<Button  variant="outlined"   style=
+{{ alignContent:"flex-end"}}> <span style={{fontWeight:"bold"}}>[Part 1] 1/</span>20</Button>
+</Stack>
         <Typography
           variant="h4"
           align="center"

@@ -47,7 +47,7 @@ function Intro() {
         <Typography variant="h6">
           Why are we asking you to take part?
         </Typography>
-        <Typography mt={1}>
+        <Typography mt={1} variant="inherit">
           Lorem Ipsum is simply dummy text of the printing and typesetting
           industry. Lorem Ipsum has been the industry's standard dummy text ever
           since the 1500s, when an unknown printer took a galley of type and
@@ -62,7 +62,7 @@ function Intro() {
         <Typography variant="h6" mt={3}>
           What would I need to do?{" "}
         </Typography>
-        <Typography mt={1}>
+        <Typography mt={1} variant="inherit">
           Lorem Ipsum is simply dummy text of the printing and typesetting
           industry. Lorem Ipsum has been the industry's standard dummy text ever
           since the 1500s, when an unknown printer took a galley of type and
@@ -73,7 +73,7 @@ function Intro() {
           more recently with desktop publishing software like Aldus PageMaker
           including versions of Lorem Ipsum.
         </Typography>
-        <Typography mt={1}>
+        <Typography mt={1} variant="inherit">
           Lorem Ipsum is simply dummy text of the printing and typesetting
           industry. Lorem Ipsum has been the industry's standard dummy text ever
           since the 1500s, when an unknown printer took a galley of type and
@@ -84,7 +84,7 @@ function Intro() {
           more recently with desktop publishing software like Aldus PageMaker
           including versions of Lorem Ipsum.
         </Typography>
-        <Typography mt={1}>
+        <Typography mt={1} variant="inherit">
           Lorem Ipsum is simply dummy text of the printing and typesetting
           industry. Lorem Ipsum has been the industry's standard dummy text ever
           since the 1500s, when an unknown printer took a galley of type and
@@ -93,7 +93,7 @@ function Intro() {
         <Typography variant="h6" mt={3}>
           How will we use the information{" "}
         </Typography>
-        <Typography mt={1}>
+        <Typography mt={1} variant="inherit">
           Lorem Ipsum is simply dummy text of the printing and typesetting
           industry. Lorem Ipsum has been the industry's standard dummy text ever
           since the 1500s, when an unknown printer took a galley of type and
@@ -106,7 +106,7 @@ function Intro() {
         <Typography variant="h6" mt={3}>
           What if I change my mind?{" "}
         </Typography>
-        <Typography mt={1}>
+        <Typography mt={1} variant="inherit">
           Lorem Ipsum is the single greatest threat. We are not - we are not
           keeping up with other websites. Lorem Ipsum best not make any more
           threats to your website. It will be met with fire and fury like the
@@ -114,14 +114,14 @@ function Intro() {
           An ‘extremely credible source’ has called my office and told me that
           Barack Obama’s placeholder text is a fraud.
         </Typography>
-        <Typography mt={1}>
+        <Typography mt={1} variant="inherit">
           Neque porro quisquam est qui dolorem ipsum quia dolor sit amet,
           consectetur, adipisci veliw
         </Typography>
         <Typography variant="h6" mt={3}>
           How can I find out the result of research?{" "}
         </Typography>
-        <Typography mt={1}>
+        <Typography mt={1} variant="inherit">
           A handcrafted, small-batch, artisinal pour-over version of the classic
           lorem ipsum generator, Hipster Ipsum will give your mocks that blue
           collar touch.
@@ -129,7 +129,7 @@ function Intro() {
         <Typography variant="h6" mt={3}>
           Who do I contact to ask question, or If I want to complaint?{" "}
         </Typography>
-        <Typography mt={1}>
+        <Typography mt={1} variant="inherit">
           A handcrafted, small-batch, artisinal pour-over version of the classic
           lorem ipsum generator, Hipster Ipsum will give your mocks that blue
           collar touch{" "}
