@@ -1,13 +1,12 @@
-import React, { useState } from "react";
+import React from "react";
 import Button from "@mui/material/Button";
 import { Box } from "@mui/system";
 import CheckCircleIcon from "@mui/icons-material/CheckCircle";
 import CheckCircleOutlineIcon from "@mui/icons-material/CheckCircleOutline";
 import Checkbox from "@mui/material/Checkbox";
 import { makeStyles } from "@mui/styles";
-import { useDispatch } from "react-redux";
+import { useDispatch ,useSelector} from "react-redux";
 import { UserUpdate } from "../redux/UserInfo/UserAction";
-import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 
 const useStyles = makeStyles({
@@ -38,29 +37,23 @@ const useStyles = makeStyles({
 });
 
 //test with macs
-export default function RolePosition({ role }) {
-  const [userInfo, setUserInfo] = useState(role);
+export default function RolePosition() {
+  const userInfo = useSelector((state) => state.user);
   const classes = useStyles();
   const dispatch = useDispatch();
-
   let navigate = useNavigate();
-
   async function handleSubmit() {
-    await setUserInfo({ ...userInfo, role: "mother" });
-     dispatch(UserUpdate({ ...userInfo, role: "mother" }));
+    dispatch(UserUpdate({ ...userInfo, role: "mother",page:"/page2" }));
     navigate("/page3", { replace: true });
   }
   async function handleSubmit2() {
-    await setUserInfo({ ...userInfo, role: "father" });
-    dispatch(UserUpdate({ ...userInfo, role: "father" }));
+    dispatch(UserUpdate({ ...userInfo, role: "father",page:"/page2" }));
     navigate("/page3", { replace: true });
   }
   async function handleSubmit3() {
-    await setUserInfo({ ...userInfo, role: "not to say" });
-    dispatch(UserUpdate({ ...userInfo, role: "not to say" }));
+    dispatch(UserUpdate({ ...userInfo, role: "not to say" ,page:"/page2" }));
     navigate("/page3", { replace: true });
   }
-  // dispatch(UserUpdate(userInfo));
 
   return (
     <Box>

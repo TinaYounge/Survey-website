@@ -1,6 +1,5 @@
-import React, { useReducer, useState } from "react";
+import React, { useState } from "react";
 import OutlinedInput from "@mui/material/OutlinedInput";
-import InputLabel from "@mui/material/InputLabel";
 import MenuItem from "@mui/material/MenuItem";
 import FormControl from "@mui/material/FormControl";
 import ListItemText from "@mui/material/ListItemText";
@@ -66,8 +65,9 @@ export default function LanguageBox() {
       target: { value },
     } = event;
     setPersonName(typeof value === "string" ? value.split(",") : value);
-    setLangInfo({ ...userInfo, language: event.target.value });
+    setLangInfo({ ...langInfo, language: event.target.value ,page:"/page3"});
   };
+
   const PushInfo = () => {
     dispatch(UserUpdate(langInfo));
   };
@@ -106,7 +106,7 @@ export default function LanguageBox() {
         fullWidth={true}
         variant="outlined"
         className={classes.buttonPage2}
-        onClick={() => setLangInfo({ ...userInfo, language: "not to say" })}
+        onClick={() => setLangInfo({ ...userInfo, language: "not to say",page:"/page3" })}
       >
         <Checkbox
           className={classes.checkBox}
@@ -117,16 +117,15 @@ export default function LanguageBox() {
       </Button>
 
       <Stack direction="row" justifyContent="center" my={5}>
-        <Link to="/page4">
-          {" "}
+        <Link to="/page6" style={{textDecoration:"none"}}>
           <Button
             variant="contained"
             color="inherit"
             sx={{ width: "300px" }}
-            onClick={PushInfo}
+            onClick={PushInfo(langInfo)}
           >
-            Continue{" "}
-          </Button>{" "}
+            Continue
+          </Button>
         </Link>
       </Stack>
     </div>

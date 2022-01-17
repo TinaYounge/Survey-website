@@ -2,7 +2,16 @@ import { GET_USER_FAIL, GET_USER_REQUEST, GET_USER_SUCCESS } from "./UserType";
 
 const initialState = {
   loading: false,
-  user: {},
+  user: {
+    role: "",
+    language: "",
+    note: "",
+    name: "",
+    email: "",
+    wantResult: "",
+    allowedContact: "",
+    page: "",
+  },
   error: "",
 };
 

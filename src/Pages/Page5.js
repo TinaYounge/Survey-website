@@ -1,15 +1,20 @@
-import { Box, Container, Typography, Stack, Button } from "@mui/material";
+
 import React from "react";
-import TextFill from "../Components/TextFill";
+import { useDispatch, useSelector } from "react-redux";
+import { UserUpdate } from "../redux/UserInfo/UserAction";
+import { Link } from "react-router-dom";
+import { Box, Container, Typography, Stack, Button } from "@mui/material";
 
 function Page5() {
+    const userInfo = useSelector((state) => state.user);
+  const dispatch = useDispatch();
   return (
     <div>
       <Box
         sx={{
           border: "1px solid ",
           borderColor: "#bcbcbc",
-          mx: 50,
+          mx: 30,
           my: 5,
           borderRadius: "8px",
           minHeight: "75vh",
@@ -41,14 +46,18 @@ function Page5() {
             Are you sure no longer to take in this survey?{" "}
           </Typography>
           <Stack direction="row" justifyContent="center" my={5}>
-            <Button variant="contained" sx={{ width: "300px" }}>
+              <Link to="/exit" style={{textDecoration:"none"}}>
+            <Button variant="contained" sx={{ width: "300px" }} onClick={()=>dispatch(UserUpdate({}))}>
               I have changed my mind{" "}
-            </Button>{" "}
+            </Button>
+            </Link>
           </Stack>
           <Stack direction="row" justifyContent="center">
+          <Link to={`${userInfo.page}`} style={{textDecoration:"none"}}>
             <Button variant="outlined" color="inherit" sx={{ width: "300px" }}>
               Back to survey
             </Button>
+            </Link>
           </Stack>
         </Container>
       </Box>

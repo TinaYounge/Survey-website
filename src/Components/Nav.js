@@ -4,6 +4,7 @@ import Box from "@mui/material/Box";
 import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
 import Container from "@mui/material/Container";
+import { Link } from "react-router-dom";
 
 const Nav = () => {
   return (
@@ -26,7 +27,8 @@ const Nav = () => {
           </Box>
 
           <Box sx={{ flexGrow: 0 }}>
-            <Typography textAlign="center">I HAVE CHANGED MY MIND</Typography>
+            <Link to="/page5" color="inherit" style={{textDecoration:"none"}}>
+            <Typography textAlign="center" >I HAVE CHANGED MY MIND</Typography></Link>
           </Box>
         </Toolbar>
       </Container>

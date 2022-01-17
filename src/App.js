@@ -11,17 +11,10 @@ import Page4 from "./Pages/Page4";
 import Page5 from "./Pages/Page5";
 import Page6 from "./Pages/Page6";
 import Page7 from "./Pages/Page7";
+import Exit from "./Pages/Exit";
 
 function App() {
-  const [userInfo, setUserInfo] = useState({
-    role:"",
-    language:"",
-    note:"",
-    name: "",
-    email: "",
-    wantResult:"",
-allowedContact:""  });
-  const dispatch = useDispatch();
+  
   const theme = createTheme({
     palette: {
       primary: {
@@ -42,12 +35,13 @@ allowedContact:""  });
         <Nav />
         <Routes>
           <Route path="/" element={<Page1 />} />
-          <Route path="/page2" element={<Page2 userInfo={userInfo}/>} />
+          <Route path="/page2" element={<Page2 />} />
           <Route path="/page3" element={<Page3 />} />
           <Route path="/page4" element={<Page4 />} />
           <Route path="/page5" element={<Page5 />} />
           <Route path="/page6" element={<Page6 />} />
           <Route path="/page7" element={<Page7 />} />
+          <Route path="/exit" element={<Exit />} />
 
         </Routes>
         <Bottom />

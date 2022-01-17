@@ -1,18 +1,10 @@
 import { Box, Container, Typography, Button, Stack } from "@mui/material";
-import React, { useState } from "react";
-import { useDispatch } from "react-redux";
+import React from "react";
+import {useSelector} from "react-redux";
 import RolePosition from "../Components/RolePosition";
 
 function Page2() {
-  const [userInfo, setUserInfo] = useState({
-    role:"",
-    language:"",
-    note:"",
-    name: "",
-    email: "",
-    wantResult:"",
-allowedContact:""  });
-
+  const userInfo= useSelector((state) => state.user);
   return (
     <Box
       sx={{

@@ -1,9 +1,16 @@
-import { Box, Container, Typography, Stack, Button } from "@mui/material";
-import React from "react";
-import TextFill from "../Components/TextFill";
-import ContactBox from "../Components/ContactBox";
+import React, {useState}from "react";
+import { Box, Container, Typography, Stack, Button,TextField,Checkbox ,FormControlLabel} from "@mui/material";
+import AccountCircleIcon from "@mui/icons-material/AccountCircle";
+import EmailIcon from "@mui/icons-material/Email";
+import { useSelector,useDispatch } from "react-redux";
+import { UserUpdate } from "../redux/UserInfo/UserAction";
 
 function Page6() {
+  const userInfo = useSelector((state) => state.user);
+  const [contact, setContact] = useState(userInfo);
+  const dispatch = useDispatch();
+
+console.log("contatc",contact)
   return (
     <div>
       <Box
@@ -32,7 +39,6 @@ function Page6() {
             If you have any questions or concern, please email lead to
             researcher"{" "}
           </Typography>
-
           <Typography color="#00224b" variant="inherit" align="center" my={4}>
             <span style={{ fontWeight: "bold" }}> . Research Group</span>{" "}
             (somehob@gmail.com)
@@ -57,7 +63,53 @@ function Page6() {
           <Typography color="#07264c" my={2} variant="inherit" align="center">
             If you change your mind, you can always opt-out at later date.{" "}
           </Typography>
-          <ContactBox />
+          {/* Contact */}
+          <Typography
+            mt={3}
+            mb={1}
+            style={{ fontWeight: "bold", color: "#00224b" }}
+          >
+            <AccountCircleIcon />
+            <span style={{ marginLeft: "5px", paddingBottom: 900 }}>
+              {" "}
+              YOUR NAME:{" "}
+            </span>{" "}
+          </Typography>
+          <TextField
+            sx={{ width: "100%", border: "1px solid #e0e3e5", marginBottom: 5 }}
+            id="outlined"
+            defaultValue="Jenifer LoveWood"
+            onChange={(e)=>setContact({...contact,name:e.target.value})}
+          />
+          <Typography mb={1} style={{ fontWeight: "bold", color: "#00224b" }}>
+            <EmailIcon />{" "}
+            <span style={{ marginLeft: "5px", paddingBottom: 900 }}>
+              {" "}
+              EMAIL:
+            </span>{" "}
+          </Typography>
+          <TextField
+            sx={{ width: "100%", border: "1px solid #e0e3e5", marginBottom: 5 }}
+            id="outlined"
+            defaultValue="JeniferLoveWood@mail.com"
+            onChange={(e)=>setContact({...contact,email:e.target.value})}
+          />
+          <FormControlLabel
+            value="yes"
+            style={{ color: "grey" }}
+            control={<Checkbox />}
+            label="I agree to receive a summary of the survey findings"
+            labelPlacement="end"
+            onChange={(e)=>setContact({...contact,wantResult:e.target.value})}
+          />
+          <FormControlLabel
+            style={{ color: "grey" }}
+            value="yes"
+            control={<Checkbox />}
+            label="I agree to be contacted by SOMEHOB in the future research"
+            labelPlacement="end"
+            onChange={(e)=>setContact({...contact,allowedContact:e.target.value})}
+          />{" "}
           <Typography
             my={2}
             style={{ fontStyle: "italic" }}
@@ -75,13 +127,14 @@ function Page6() {
               variant="contained"
               color="inherit"
               sx={{ width: "300px", marginLeft: "20px" }}
+              onClick={dispatch(UserUpdate(contact))}
             >
-              Submit{" "}
+              Submit
             </Button>
           </Stack>
         </Container>
       </Box>
     </div>
   );
-    }
+}
 export default Page6;

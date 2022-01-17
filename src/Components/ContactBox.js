@@ -4,11 +4,12 @@ import { Typography } from "@mui/material";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 import EmailIcon from "@mui/icons-material/Email";
 import Checkbox from "@mui/material/Checkbox";
-import FormGroup from "@mui/material/FormGroup";
 import FormControlLabel from "@mui/material/FormControlLabel";
-import FormControl from "@mui/material/FormControl";
-import FormLabel from "@mui/material/FormLabel";
-function ContactBox() {
+import { useDispatch } from "react-redux";
+
+function ContactBox({userInfo}) {
+  const userInfoChild =userInfo;
+  
   return (
     <div>
       <Typography
@@ -26,6 +27,7 @@ function ContactBox() {
         sx={{ width: "100%", border: "1px solid #e0e3e5", marginBottom: 5 }}
         id="outlined"
         defaultValue="Jenifer LoveWood"
+      
       />
       <Typography mb={1} style={{ fontWeight: "bold", color: "#00224b" }}>
         <EmailIcon />{" "}
@@ -35,6 +37,7 @@ function ContactBox() {
         sx={{ width: "100%", border: "1px solid #e0e3e5", marginBottom: 5 }}
         id="outlined"
         defaultValue="JeniferLoveWood@mail.com"
+
       />
       <FormControlLabel
         value="end"
