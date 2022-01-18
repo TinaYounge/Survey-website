@@ -23,7 +23,10 @@ export default function Page1() {
         </Box>
         <Box sx={{  width: "100%", my: 4 }}>
           <Stack spacing={2} direction="row">
+          <Link to="/exit" style={{  textDecoration: "none"}}>
             <Button variant="outlined">Cancel</Button>
+            </Link>
+
             <Link to="/page2" style={{  textDecoration: "none"}}>
               <Button variant="contained" >
                 I have read and agree with the terms of use

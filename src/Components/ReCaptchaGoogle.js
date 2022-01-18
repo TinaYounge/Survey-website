@@ -8,8 +8,8 @@ function ReCaptchaGoogle() {
   //Link to get the key:" https://cloud.google.com/recaptcha-enterprise/docs/create-key"
   return (
     <div>
-      <ReCAPTCHA sitekey="Your client site key" onChange={onChange} />
-    </div>
+      <ReCAPTCHA sitekey="6LfGfRweAAAAADR2U3Cws2eSWmFPFYniR_IOdD6G" onChange={onChange} />
+      </div>
   );
 }
 
