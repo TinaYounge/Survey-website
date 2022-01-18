@@ -20,7 +20,7 @@ export default function TextFill() {
         multiline
         rows={10}
         color="warning"
-        defaultValue="nnnnnnnnnnnn"
+        placeholder="nnnnnnnnn"
         onChange={(e) => setTextFill({ ...textFill, note: e.target.value,page: "/page4" })}
       />
       <Stack direction="row" justifyContent="center">

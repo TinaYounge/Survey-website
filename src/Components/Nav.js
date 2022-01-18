@@ -4,7 +4,6 @@ import Box from "@mui/material/Box";
 import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
 import Container from "@mui/material/Container";
-
 import { Link } from "react-router-dom";
 
 const Nav = () => {
@@ -34,7 +33,7 @@ const Nav = () => {
               style={{ textDecoration: "none", color: "white" }}
             >
               <Typography textAlign="center" style={{ color: "#fffff" }}>
-                I HAVE CHANGED MY MIND
+                I HAVE CHANGED MY MIND 
               </Typography>
             </Link>
           </Box>
