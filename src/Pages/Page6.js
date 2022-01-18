@@ -86,7 +86,8 @@ function Page6() {
           <TextField
             sx={{ width: "100%", border: "1px solid #e0e3e5", marginBottom: 5 }}
             id="outlined"
-            defaultValue="Jenifer LoveWood"
+            type="name"
+            placeholder="Jenifer LoveWood"
             onChange={(e) =>
               setContact({ ...contact, name: e.target.value, page: "/page6" })
             }
@@ -99,9 +100,10 @@ function Page6() {
             </span>{" "}
           </Typography>
           <TextField
+          type="email"
             sx={{ width: "100%", border: "1px solid #e0e3e5", marginBottom: 5 }}
             id="outlined"
-            defaultValue="JeniferLoveWood@mail.com"
+            placeholder="JeniferLoveWood@mail.com"
             onChange={(e) =>
               setContact({ ...contact, email: e.target.value, page: "/page6" })
             }
