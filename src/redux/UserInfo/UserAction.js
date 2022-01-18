@@ -13,8 +13,6 @@ export const UserSuccess = (state) => {
   };
 };
 
-
-
 export const UserFail = () => {
   return {
     type: GET_USER_FAIL,
