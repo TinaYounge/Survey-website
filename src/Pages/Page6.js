@@ -28,7 +28,6 @@ function Page6() {
           mx: 10,
           my: 5,
           borderRadius: "8px",
-          minHeight: "75vh",
         }}
       >
         <Container maxWidth="sm">
@@ -78,7 +77,7 @@ function Page6() {
             style={{ fontWeight: "bold", color: "#00224b" }}
           >
             <AccountCircleIcon />
-            <span style={{ marginLeft: "5px", paddingBottom: 900 }}>
+            <span style={{ marginLeft: "5px"}}>
               {" "}
               YOUR NAME:{" "}
             </span>{" "}
@@ -94,7 +93,7 @@ function Page6() {
           />
           <Typography mb={1} style={{ fontWeight: "bold", color: "#00224b" }}>
             <EmailIcon />{" "}
-            <span style={{ marginLeft: "5px", paddingBottom: 900 }}>
+            <span style={{ marginLeft: "5px" }}>
               {" "}
               EMAIL:
             </span>{" "}
