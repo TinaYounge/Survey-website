@@ -7,7 +7,7 @@ function Page7() {
     <div>
       <Box
         style={{
-          minHeight: "80vh",
+          minHeight: "90vh",
         }}
       >
         <Container maxWidth="sm">
