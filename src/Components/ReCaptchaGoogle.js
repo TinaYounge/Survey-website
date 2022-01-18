@@ -8,7 +8,7 @@ function ReCaptchaGoogle() {
   //Link to get the key:" https://cloud.google.com/recaptcha-enterprise/docs/create-key"
   return (
     <div>
-      <ReCAPTCHA sitekey="6LfGfRweAAAAADR2U3Cws2eSWmFPFYniR_IOdD6G" onChange={onChange} />
+      <ReCAPTCHA sitekey="6LdP5RweAAAAACCSIzlNQAOHx3erAbYBCQ5ollR8" onChange={onChange} />
       </div>
   );
 }
