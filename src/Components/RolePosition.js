@@ -5,7 +5,7 @@ import CheckCircleIcon from "@mui/icons-material/CheckCircle";
 import CheckCircleOutlineIcon from "@mui/icons-material/CheckCircleOutline";
 import Checkbox from "@mui/material/Checkbox";
 import { makeStyles } from "@mui/styles";
-import { useDispatch ,useSelector} from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { UserUpdate } from "../redux/UserInfo/UserAction";
 import { useNavigate } from "react-router-dom";
 
@@ -35,23 +35,24 @@ const useStyles = makeStyles({
     },
   },
 });
-
+// https://codepen.io/Ferie/pen/ePZrZw
 //test with macs
 export default function RolePosition() {
   const userInfo = useSelector((state) => state.user);
   const classes = useStyles();
   const dispatch = useDispatch();
   let navigate = useNavigate();
+
   async function handleSubmit() {
-    dispatch(UserUpdate({ ...userInfo, role: "mother",page:"/page2" }));
+    dispatch(UserUpdate({ ...userInfo, role: "mother", page: "/page2" }));
     navigate("/page3", { replace: true });
   }
   async function handleSubmit2() {
-    dispatch(UserUpdate({ ...userInfo, role: "father",page:"/page2" }));
+    dispatch(UserUpdate({ ...userInfo, role: "father", page: "/page2" }));
     navigate("/page3", { replace: true });
   }
   async function handleSubmit3() {
-    dispatch(UserUpdate({ ...userInfo, role: "not to say" ,page:"/page2" }));
+    dispatch(UserUpdate({ ...userInfo, role: "not to say", page: "/page2" }));
     navigate("/page3", { replace: true });
   }
 

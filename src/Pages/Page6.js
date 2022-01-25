@@ -19,14 +19,56 @@ function Page6() {
   const dispatch = useDispatch();
   const userInfo = useSelector((state) => state.user);
   const [contact, setContact] = useState(userInfo);
+  const [errorMessage, setErrorMessage] = useState({ email: "", name: "" });
+
+  function ValidateEmail(e) {
+    var email = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+    if (e.match(email)) {
+    } else {
+      setErrorMessage({
+        ...errorMessage,
+        email: "You have entered an invalid email address!",
+      });
+    }
+  }
+
+  function allLetter(e) {
+    var letters = /^[A-Za-z]+$/;
+    if (e.match(letters)) {
+    } else {
+      setErrorMessage({
+        ...errorMessage,
+        name: "Name is not included any numbers or special characters",
+      });
+    }
+  }
+  const HandleOnChangeName = (e) => {
+    allLetter(e.target.value);
+    setContact({ ...contact, name: e.target.value, page: "/page6" });
+  };
+
+  const HandleOnChange = (e) => {
+    ValidateEmail(e.target.value);
+    setContact({ ...contact, email: e.target.value, page: "/page6" });
+  };
+  const BeforeDispatch = () => {
+    if (
+      errorMessage.name ===
+        "Name is not included any numbers or special characters" ||
+      errorMessage.email === "You have entered an invalid email address!"
+    ) {
+      alert("Input again")
+    }
+  };
+
   return (
     <div>
       <Box
         sx={{
           border: "1px solid ",
           borderColor: "#bcbcbc",
-          mx: 10,
-          my: 5,
+          mx: "5vw",
+          my: "2vh",
           borderRadius: "8px",
         }}
       >
@@ -77,39 +119,33 @@ function Page6() {
             style={{ fontWeight: "bold", color: "#00224b" }}
           >
             <AccountCircleIcon />
-            <span style={{ marginLeft: "5px"}}>
-              {" "}
-              YOUR NAME:{" "}
-            </span>{" "}
+            <span style={{ marginLeft: "5px" }}> YOUR NAME: </span>{" "}
           </Typography>
           <TextField
-            sx={{ width: "100%", border: "1px solid #e0e3e5", marginBottom: 5 }}
+            sx={{ width: "100%", border: "1px solid #e0e3e5" }}
             id="outlined"
             type="name"
             placeholder="Jenifer LoveWood"
-            onChange={(e) =>
-              setContact({ ...contact, name: e.target.value, page: "/page6" })
-            }
+            onChange={HandleOnChangeName}
           />
-          <Typography mb={1} style={{ fontWeight: "bold", color: "#00224b" }}>
-            <EmailIcon />{" "}
-            <span style={{ marginLeft: "5px" }}>
-              {" "}
-              EMAIL:
-            </span>{" "}
+          <span style={{ color: "red" }}> {errorMessage.name}</span> <br />
+          <Typography
+            mb={1}
+            style={{ fontWeight: "bold", marginTop: 20, color: "#00224b" }}
+          >
+            <EmailIcon /> <span style={{ marginLeft: "5px" }}> EMAIL:</span>{" "}
           </Typography>
           <TextField
-          type="email"
-            sx={{ width: "100%", border: "1px solid #e0e3e5", marginBottom: 5 }}
+            type="email"
+            sx={{ width: "100%", border: "1px solid #e0e3e5" }}
             id="outlined"
             placeholder="JeniferLoveWood@mail.com"
-            onChange={(e) =>
-              setContact({ ...contact, email: e.target.value, page: "/page6" })
-            }
+            onChange={HandleOnChange}
           />
+          <span style={{ color: "red" }}> {errorMessage.email}</span> <br />
           <FormControlLabel
             value="yes"
-            style={{ color: "grey" }}
+            style={{ color: "grey", marginTop: 10 }}
             control={<Checkbox />}
             label="I agree to receive a summary of the survey findings"
             labelPlacement="end"
@@ -147,7 +183,10 @@ function Page6() {
           <Stack direction="row" justifyContent="center" my={4}>
             <Link to="/" style={{ textDecoration: "none" }}>
               {" "}
-              <Button variant="outlined" sx={{ width: "200px" }}>
+              <Button
+                variant="outlined"
+                // sx={{ width: "200px" }}
+              >
                 Back to the survey{" "}
               </Button>{" "}
             </Link>
@@ -155,8 +194,9 @@ function Page6() {
               <Button
                 variant="contained"
                 color="inherit"
-                sx={{ width: "300px", marginLeft: "20px" }}
-                onClick={dispatch(UserUpdate(contact))}
+                // sx={{ width: "300px", marginLeft: "20px" }}
+                // onClick={dispatch(UserUpdate(contact))}
+                onClick={BeforeDispatch}
               >
                 Submit
               </Button>

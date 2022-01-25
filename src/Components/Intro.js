@@ -39,12 +39,12 @@ function Intro() {
         </Typography>
         <Typography  variant="inherit" align="center">
           Once you have read and understood the information, If you agree to
-          take part in the reserch, click on the{" "}
+          take part in the research, click on the{" "}
           <span style={{ fontWeight: "bold" }}>"I Agree"</span> button to begin
           the survey.
         </Typography>
       </Box>
-      <Box mt={3} sx={{ p: 2 }} style={{ background: "#f5f5f5" }}>
+      <Box mt={3} sx={{ p: 2 }} style={{ background: "#f5f5f5" , borderRadius: "5px"}}>
         <Typography color="#07264c" variant="h6">
           Why are we asking you to take part?
         </Typography>
@@ -100,10 +100,7 @@ function Intro() {
           since the 1500s, when an unknown printer took a galley of type and
           scrambled it to make a type specimen book.
         </Typography>
-        <Typography color="#07264c" mt={1}>
-          Neque porro quisquam est qui dolorem ipsum quia dolor sit amet,
-          consectetur, adipisci veliw
-        </Typography>
+     
         <Typography color="#07264c" variant="h6" mt={3}>
           What if I change my mind?{" "}
         </Typography>

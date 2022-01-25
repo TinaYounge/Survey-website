@@ -10,10 +10,10 @@ function Page3() {
         sx={{
           border: "1px solid ",
           borderColor: "#bcbcbc",
-          mx: 10,
-          my: 5,
+          mx: "5vw",
+          my: "2vh",
           borderRadius: "8px",
-          minHeight: "75vh",
+          minHeight: "85vh",
         }}
       >
         <Container maxWidth="sm">

@@ -11,6 +11,7 @@ const initialState = {
     wantResult: "",
     allowedContact: "",
     page: "",
+    captcha: "No",
   },
   error: "",
 };

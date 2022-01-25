@@ -32,7 +32,7 @@ function Page7() {
                 color="primary"
                 sx={{ width: "300px" }}
               >
-                Back to SOMEHOB{" "}
+                Back to SOMEHOB
               </Button>
             </Link>
           </Stack>
